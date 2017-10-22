@@ -1,6 +1,5 @@
-using System;
+﻿using System;
 using System.IO;
-using System.IO.Ports;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;

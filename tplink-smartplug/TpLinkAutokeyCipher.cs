@@ -3,7 +3,7 @@
     public class TpLinkAutokeyCipher
     {
         private readonly byte _startKey = 171;
-        private readonly byte[] _header = new byte[4] { 0x00, 0x00, 0x00, 0x00 };
+        private readonly byte[] _header = { 0x00, 0x00, 0x00, 0x00 };
 
         public byte[] Encrypt(byte[] source)
         {
@@ -11,7 +11,7 @@
             var key = _startKey;
             for (int sourceIndex = 0, resultIndex = 4; sourceIndex < source.Length; sourceIndex++, resultIndex++)
             {
-                var b = (byte) (key ^ source[sourceIndex]);
+                var b = (byte)(key ^ source[sourceIndex]);
                 key = b;
                 result[resultIndex] = b;
             }
